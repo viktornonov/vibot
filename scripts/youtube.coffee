@@ -25,4 +25,6 @@ module.exports = (robot) ->
         video.link.forEach (link) ->
           if link.rel is "alternate" and link.type is "text/html"
             msg.send link.href
+            require('child_process').exec('echo "' + link.href + '" | pbcopy')
+            
 
